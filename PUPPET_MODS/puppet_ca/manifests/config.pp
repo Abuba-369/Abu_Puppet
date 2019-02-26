@@ -41,8 +41,7 @@ class puppet_ca::config (
                 mode    => '0644',
                 owner   => 'puppet',
                 group   => 'puppet',
-                owner   => 'puppet',
-                group   => 'puppet',
+                group   => 'puppet',                
                 }
 
 
