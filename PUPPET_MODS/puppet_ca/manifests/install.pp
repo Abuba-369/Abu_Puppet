@@ -1,7 +1,8 @@
-class puppet_ca::install(
-  $package_name = $::puppet_ca::package_name,
-) {
-  package { 'puppetserver-package':
-      name   => $package_name,
+class puppet_ca::install {
+     package { 'puppetserver':
+     ensure => $::puppet_ca::version,
+     name   => $::puppet_ca::package,
   }
+
 }
+
