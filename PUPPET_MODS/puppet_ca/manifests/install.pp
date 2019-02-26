@@ -1,8 +1,9 @@
-class puppet_ca::install {
-     package { 'puppetserver':
-     ensure => $::puppet_ca::version,
-     name   => $::puppet_ca::package,
+class puppet_ca::install (
+$package_name = $::ssh::package_name,
+) {
+  package { 'ssh-package':
+    name   => $package_name,
   }
-
 }
+
 
