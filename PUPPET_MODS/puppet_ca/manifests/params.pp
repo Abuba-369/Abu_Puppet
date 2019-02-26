@@ -1,5 +1,5 @@
 class puppet_ca::params {
-        $version        = 'present',
+        
         $package_name = 'puppetserver'
         $service_name = 'puppetserver'
         $service_ensure = 'running'
