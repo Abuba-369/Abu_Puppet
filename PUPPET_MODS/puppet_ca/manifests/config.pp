@@ -40,9 +40,8 @@ class puppet_ca::config (
                 ensure  => directory,
                 mode    => '0644',
                 owner   => 'puppet',
-                group   => 'puppet',
-                group   => 'puppet',                
-                }
+                group   => 'puppet',                    
+               }
 
 
 }
