@@ -1,5 +1,5 @@
 class puppet_ca(
-  $version           = $::puppet_ca::params::version,
+  
   $package_name      = $::puppet_ca::params::package_name,
   $service_name      = $::puppet_ca::params::service_name,
   $service_ensure    = $::puppet_ca::params::service_ensure,
