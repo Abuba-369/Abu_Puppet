@@ -5,5 +5,5 @@ class puppet_multi::params {
         $service_enable = true
         $server         = 'localhost'
         $ca_server      = 'localhost'
-        $puppetdb_value = 'localhost'
+        $puppetdb_servers = 'localhost'
 }
