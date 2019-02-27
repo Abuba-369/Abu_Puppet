@@ -1,9 +1,10 @@
-class puppet_multi::config {
+class puppet_multi::config (
 
 
         $ca_server = $::puppet_multi::ca_server,
         $server   = $::puppet_multi::server,
         $puppetdb_value = $::puppet_multi::puppetdb_value,
+) {
 
         file { '/etc/puppetlabs/puppet/puppet.conf':
                 ensure  => file,
@@ -32,8 +33,6 @@ class puppet_multi::config {
         file { '/opt/puppetlabs/server/apps/puppetserver/config/services.d/bootstrap.cfg':
                 ensure => file,
                 mode   => '0644',
-                owner  => 'puppet',
-                group  => 'puppet',
                 owner  => 'puppet',
                 group  => 'puppet',
                 source => 'puppet:///modules/puppet_multi/bootstrap.cfg',
