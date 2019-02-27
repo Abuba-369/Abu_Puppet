@@ -1,0 +1,42 @@
+## This file is configured for puppet Multimaster and ca
+
+# This file can be used to override the default puppet settings.
+# See the following links for more details on what settings are available:
+# - https://puppet.com/docs/puppet/latest/config_important_settings.html
+# - https://puppet.com/docs/puppet/latest/config_about_settings.html
+# - https://puppet.com/docs/puppet/latest/config_file_main.html
+# - https://puppet.com/docs/puppet/latest/configuration.html
+[master]
+  autosign = true
+  vardir = /opt/puppetlabs/server/data/puppetserver
+  logdir = /var/log/puppetlabs/puppetserver
+  rundir = /var/run/puppetlabs/puppetserver
+  pidfile = /var/run/puppetlabs/puppetserver/puppetserver.pid
+  codedir = /etc/puppetlabs/code
+  confdir = /etc/puppetlabs/puppet
+  autosign = $confdir/autosign.conf
+  #reports = puppetdb
+  environmentpath  = $codedir/environments
+ 
+# Hiera Config
+  hiera_config          = $confdir/hiera.yaml
+
+# PuppetDB Config
+ #storeconfigs          = true
+ #storeconfigs_backend  = puppetdb
+
+# If you use an external node classifier, set these up
+  #node_terminus         = exec
+  #external_nodes        = $codedir/environments/production/bin/enc.rb
+
+  # Default environment cache is 3 minutes. Let’s set 0 to not cache at     all
+  environment_timeout   = 0
+
+[agent]
+  report      = true
+  splay       = true
+  server      = <%= @server %>
+  ca_server   = <%= @ca_server %>
+  classfile   = $vardir/classes.txt
+  localconfig = $vardir/localconfig
+  environment = production
