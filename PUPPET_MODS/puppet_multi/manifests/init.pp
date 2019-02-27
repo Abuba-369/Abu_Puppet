@@ -6,7 +6,7 @@ class puppet_multi  (
   $service_enable    = $::puppet_multi::params::service_enable,
   $server            = $::puppet_multi::params::server,
   $ca_server         = $::puppet_multi::params::ca_server,
-  $puppetdb_host     = $::puppet_multi::params::puppetdb_host,
+  $puppetdb_servers     = $::puppet_multi::params::puppetdb_servers,
 
 ) inherits ::puppet_multi::params {
   class { '::puppet_multi::service': }
