@@ -6,7 +6,7 @@
 # - https://puppet.com/docs/puppet/latest/config_file_main.html
 # - https://puppet.com/docs/puppet/latest/configuration.html
 [master]
-  autosign = <%= $autosign_value %>
+  autosign = true
   vardir = /opt/puppetlabs/server/data/puppetserver
   logdir = /var/log/puppetlabs/puppetserver
   rundir = /var/run/puppetlabs/puppetserver
