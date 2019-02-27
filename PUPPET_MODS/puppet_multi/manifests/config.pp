@@ -3,7 +3,7 @@ class puppet_multi::config (
 
         $ca_server = $::puppet_multi::ca_server,
         $server   = $::puppet_multi::server,
-        $puppetdb_value = $::puppet_multi::puppetdb_value,
+        $puppetdb_servers = $::puppet_multi::puppetdb_servers,
 ) {
 
         file { '/etc/puppetlabs/puppet/puppet.conf':
